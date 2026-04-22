@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>موقعي الأول</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Tajawal', Arial, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #b2ebf2, #80deea);
       color: #333;
       min-height: 100vh;
@@ -15,39 +17,24 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
       padding: 20px;
+      overflow-x: hidden;
     }
+
+    .bubble {
+      position: fixed;
+      border-radius: 50%;
+      background: rgba(0, 150, 200, 0.08);
+      animation: float linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(110vh) scale(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
     .card {
-      background: white;
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 500px;
-      box-shadow: 0 10px 40px rgba(0,150,200,0.2);
-      border: 2px solid #b2ebf2;
-    }
-    h1 { font-size: 2em; margin-bottom: 10px; color: #0077b6; }
-    p { font-size: 1.1em; line-height: 1.8; color: #555; margin-bottom: 20px; }
-    .btn {
-      display: inline-block;
-      margin: 10px auto;
-      padding: 12px 30px;
-      background: #0088cc;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1em;
-    }
-    .btn:hover { background: #0077b6; }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <h1>مرحباً بكم! 👋</h1>
-    <p>هذا موقعي الأول على الإنترنت.<br>تم بناؤه بـ HTML و CSS.</p>
-    <a class="btn" href="https://t.me/mohamedmkisse" target="_blank">
-      📱 تواصل معي على Telegram
-    </a>
-  </div>
-</body>
-</html>
+      background: rgba(255,255,255,0.92);
